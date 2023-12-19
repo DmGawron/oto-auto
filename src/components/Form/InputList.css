@@ -1,0 +1,32 @@
+.list {
+	list-style: none;
+	background-color: rgb(235, 235, 235);
+	max-height: 10rem;
+	overflow: scroll;
+	overflow-x: hidden;
+	border-top: 2px solid #0071ce;
+	position: absolute;
+	left: 50%;
+	/* right: 0; */
+	z-index: 100;
+	transform: translateX(-50%);
+	width: min(100%, max(100% - 2 * 0.75rem));
+	/* width: min(100%, max-content); */
+}
+
+.list li {
+	padding: 0 1rem;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: color 0.2s ease-out;
+}
+
+.list li:hover {
+	color: #0071ce;
+}
+
+/* @media screen and (min-width: 768px) {
+	.list {
+		width: 93.5%;
+	}
+} */

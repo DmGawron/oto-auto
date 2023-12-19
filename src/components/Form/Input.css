@@ -1,0 +1,57 @@
+.single-input {
+	/* display: flex; */
+	padding: 0.75rem;
+	/* border: 1px solid red; */
+	grid-column-end: span 2;
+	position: relative;
+}
+
+.short {
+	position: relative;
+	padding: 0.75rem;
+}
+
+label {
+	display: inline;
+	font-size: 1rem;
+}
+
+input {
+	width: 100%;
+	padding: 0.7rem 0.5rem;
+	padding-right: 3rem;
+	background-color: rgb(235, 235, 235);
+	border-color: transparent;
+	font-size: 1.1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+}
+
+input::placeholder {
+	color: rgb(101, 101, 101);
+}
+
+.arrow-btn {
+	position: absolute;
+	right: 1.75rem;
+	top: 50%;
+	border-radius: 50px;
+	background-color: rgb(235, 235, 235);
+	pointer-events: none;
+}
+
+.arrow-icon {
+	font-size: 1.3rem;
+	transition: transform 0.3s ease-out;
+}
+
+.arrow-icon.expand {
+	transform: rotate(180deg);
+}
+
+@media screen and (min-width: 768px) {
+	.single-input {
+		grid-column-end: span 2;
+	}
+}

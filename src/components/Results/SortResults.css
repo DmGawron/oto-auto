@@ -1,0 +1,31 @@
+.results-sort-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sort-container {
+	display: block;
+	display: flex;
+	flex-direction: column;
+}
+.results-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#sort {
+	padding: 0.75rem;
+	background-color: rgb(235, 235, 235);
+	border-color: transparent;
+	font-size: 1.1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+}
+
+@media screen and (max-width: 880px) {
+	.results-title h2 {
+		margin-top: 0.5rem;
+	}
+}

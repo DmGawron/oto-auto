@@ -1,0 +1,16 @@
+.footer {
+	text-align: center;
+}
+
+.footer span {
+	margin-right: 0.5rem;
+}
+
+.footer span::after {
+	content: "•";
+	margin-left: 0.5rem;
+}
+
+.footer p span:last-child::after {
+	content: "";
+}

@@ -1,0 +1,174 @@
+.offer {
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+	margin: 0 10rem;
+	margin: 0 auto;
+	max-width: 85%;
+}
+
+svg {
+	position: relative;
+	font-size: 28px;
+	color: #2595e4;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+}
+.follow {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.line {
+	display: flex;
+	cursor: pointer;
+	position: relative;
+	padding-bottom: 5px;
+}
+
+.line p {
+	font-size: 22px;
+	margin-left: 0.25rem;
+	font-weight: 600;
+	color: #2595e4;
+}
+
+.line::after {
+	content: "";
+	position: absolute;
+	bottom: -5px;
+	width: 110%;
+	height: 2px;
+	transform: translateX(-4%) scaleX(1);
+	/* transform-origin: left center; */
+	background-color: #2595e4;
+	transition: transform 0.3s ease-in-out;
+}
+
+.line:hover::after {
+	transform: scaleX(0.5);
+}
+
+.offerDetails {
+	display: flex;
+	gap: 16px;
+	margin-top: 3rem;
+}
+
+.offerDetails img {
+	/* max-height: 450px; */
+	/* max-width: 700px; */
+	max-width: 700px;
+	height: 80%;
+	height: 420px;
+	/* height: auto; */
+	/* max-width: 100%; */
+
+	/* background-size: cover; */
+	/* background-position: center; */
+	object-fit: contain;
+	/* object-fit: cover; */
+}
+
+.offerCarStats {
+	width: 100%;
+}
+
+.offerInfo {
+	display: flex;
+	justify-content: space-between;
+}
+
+.price {
+	display: flex;
+	flex-wrap: nowrap;
+	color: rgb(212, 14, 14);
+}
+
+.price span {
+	font-size: 16px;
+	vertical-align: text-top;
+}
+
+.offerInfo p {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.offerMoreInfo {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+	margin-top: 3rem;
+	font-size: 18px;
+	color: rgb(71, 71, 71);
+}
+
+.offerMoreInfo div {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.location {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 5rem;
+}
+
+.location p {
+	font-size: 24px;
+	color: #2595e4;
+	text-decoration: underline;
+	margin-left: 1rem;
+}
+
+/* @media screen and (max-width: 1200px) {
+	.offer {
+		margin: 0 1rem;
+	}
+
+	.offerDetails img {
+		
+		max-width: 500px;
+		height: 80%;
+		
+		object-fit: contain;
+		
+	}
+} */
+
+@media screen and (max-width: 1300px) {
+	.offerMoreInfo {
+		grid-template-columns: 1fr;
+		gap: 18px;
+		margin-top: 3rem;
+		font-size: 18px;
+		color: rgb(71, 71, 71);
+	}
+
+	.offerDetails {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+		margin-top: 1rem;
+	}
+
+	.location {
+		margin-top: 1rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.offerDetails img {
+		max-width: 500px;
+		max-width: 100%;
+		height: 80%;
+		height: 420px;
+		height: auto;
+		object-fit: cover;
+	}
+
+	.location {
+		justify-content: start;
+	}
+}

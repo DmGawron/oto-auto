@@ -1,0 +1,18 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	margin: 1rem;
+}
+
+.pageNum {
+	font-size: 1.25rem;
+	color: #2595e4;
+	cursor: pointer;
+}
+
+.active {
+	font-weight: bold;
+	color: #075f9e;
+	text-decoration: underline;
+}
