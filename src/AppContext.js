@@ -10,45 +10,6 @@ import {
 	allCarsData,
 } from "./data/carsData";
 
-const carsArrayData = [
-	{
-		carBody: "Coupe",
-		brand: "Audi",
-		model: "A5",
-		fuel: "Benzyna",
-		price: 55000,
-		mileage: 154400,
-		year: 2014,
-	},
-	{
-		carBody: "Coupe",
-		brand: "BMW",
-		model: "M3",
-		fuel: "Benzyna",
-		price: 255000,
-		mileage: 24400,
-		year: 2021,
-	},
-	{
-		carBody: "Sedan",
-		brand: "Reanult",
-		model: "laguna",
-		fuel: "Diesel",
-		price: 15000,
-		mileage: 324400,
-		year: 2006,
-	},
-	{
-		carBody: "Sedan",
-		brand: "BMW",
-		model: "M6",
-		fuel: "Benzyna",
-		price: 151000,
-		mileage: 3400,
-		year: 2020,
-	},
-];
-
 const AppContext = createContext();
 // let carsData;
 
@@ -171,8 +132,6 @@ export const AppProvider = ({ children }) => {
 	const selectedCarModels = allCarsData.find(
 		(car) => car?.brand === selectedCarData?.brand
 	);
-
-	function handleModels() {}
 
 	const dataCtx = {
 		brandsArr: brandsArr.sort(),
