@@ -17,7 +17,7 @@ function App() {
 					<Route path="login" element={<Login />} />
 					<Route path="login" element={<Login />} />
 					<Route path="wyniki" element={<SearchResults />} />
-					<Route path="wyniki/:id" element={<SingleOffer />} />
+					<Route path="wyniki/oferta/:id" element={<SingleOffer />} />
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 			</BrowserRouter>

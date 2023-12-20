@@ -2,7 +2,7 @@ import Input from "./Input";
 import "./FormInputs.css";
 import Button from "./Button/Button";
 import { useGlobalContext } from "../../AppContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 function FormInputs() {
@@ -21,6 +21,8 @@ function FormInputs() {
 	} = useGlobalContext();
 
 	const navigate = useNavigate();
+
+	const { brand } = useParams();
 
 	console.log(selectedCarData);
 	// console.log(filteredCarsData);
@@ -109,7 +111,7 @@ function FormInputs() {
 					onClick={(e) => {
 						e.preventDefault();
 						filterCars(); //tymczasowo
-						navigate("wyniki");
+						navigate(`wyniki`);
 					}}
 
 					// onClick={handleClick}

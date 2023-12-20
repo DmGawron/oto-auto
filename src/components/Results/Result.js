@@ -11,12 +11,14 @@ function Result({ car }) {
 
 	return (
 		<li>
-			<Link className={styles.listItem} to={`${car.id}`}>
+			<Link className={styles.listItem} to={`/wyniki/oferta/${car.id}`}>
 				<img src={`http://localhost:3000/${car.image}`} alt={car.brand} />
 
 				<div className={styles.carDetails}>
 					<div className={styles.carEngineAndName}>
-						<p>{car.brand} car Model</p>
+						<p>
+							{car.brand} {car.model}
+						</p>
 						<div className={styles.engineInfo}>
 							<span>{car.capacity} cm3</span>
 							<span>{car.power} KM</span>

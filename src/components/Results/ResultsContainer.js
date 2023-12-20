@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGlobalContext } from "../../AppContext";
 import Result from "./Result";
 import "./ResultsContainer.css";

@@ -8,7 +8,7 @@ function SortResults() {
 		<div className="results-sort-container">
 			<div className="results-title">
 				<h2>Wyniki Wyszukiwania</h2>
-				<span>Liczba ogłoszeń: X</span>
+				<span>Liczba ogłoszeń: {filteredCarsData.length}</span>
 			</div>
 			<div className="sort-container">
 				<label>Sortuj</label>

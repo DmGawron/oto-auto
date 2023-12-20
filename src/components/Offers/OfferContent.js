@@ -26,7 +26,9 @@ function OfferContent() {
 
 				<div className={styles.offerCarStats}>
 					<div className={styles.offerInfo}>
-						<p>{foundCarById.brand} Modex: X</p>
+						<p>
+							{foundCarById.brand} {foundCarById.model}
+						</p>
 						<p className={styles.price}>
 							{foundCarById.price.toLocaleString()} <span>PLN</span>{" "}
 						</p>
