@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import SearchResults from "./pages/SearchResults";
 import SingleOffer from "./pages/SingleOffer";
+import CreateOfferPage from "./pages/CreateOfferPage";
 
 function App() {
 	const router = createBrowserRouter([
@@ -29,8 +30,8 @@ function App() {
 			element: <Login />,
 		},
 		{
-			path: "/login",
-			element: <Login />,
+			path: "/stworz-ogloszenie",
+			element: <CreateOfferPage />,
 		},
 		{
 			path: "/wyniki",

@@ -43,7 +43,7 @@ function Nav() {
 				<NavLink to="/login">
 					<RiLoginBoxLine className="nav-login-icon icon" /> <p>Zaloguj się</p>
 				</NavLink>
-				<NavLink to="/login" className="create-ad-link">
+				<NavLink to="/stworz-ogloszenie" className="create-ad-link">
 					<FaPlus className="nav-plus-icon icon" /> <p> Utwórz ogłoszenie</p>
 				</NavLink>
 			</ul>
