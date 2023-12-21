@@ -52,6 +52,7 @@ function FormInputs() {
 					id="model"
 					listData={selectedCarModels?.models.sort()}
 					handleSelectListItem={handleSelectListItem}
+					disableInput={!selectedCarModels}
 				/>
 				<Input
 					name="fuel"

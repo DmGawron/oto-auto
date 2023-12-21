@@ -4,7 +4,15 @@ import { IoIosArrowUp } from "react-icons/io";
 import InputList from "./InputList";
 import { useGlobalContext } from "../../AppContext";
 
-function Input({ name, text, short, id, listData, handleSelectListItem }) {
+function Input({
+	name,
+	text,
+	short,
+	id,
+	listData,
+	handleSelectListItem,
+	disableInput,
+}) {
 	const [openList, setOpenList] = useState(false);
 	const [searchTerms, setSearchTerms] = useState("");
 	const [results, setResults] = useState(listData);
@@ -61,6 +69,7 @@ function Input({ name, text, short, id, listData, handleSelectListItem }) {
 				onChange={(event) => {
 					handleSearch(event);
 				}}
+				disabled={disableInput}
 			/>
 			<span className="arrow-btn">
 				<IoIosArrowUp className={`arrow-icon ${openList ? "expand" : ""}`} />
