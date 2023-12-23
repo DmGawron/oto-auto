@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./Input.css";
+import styles from "./Input.module.css";
 import { IoIosArrowUp } from "react-icons/io";
 import InputList from "./InputList";
 import { useGlobalContext } from "../../AppContext";
@@ -47,32 +47,40 @@ function Input({
 		setOpenList(false);
 		handleSelectListItem(name, value);
 	}
+	
 
-	function handleOpenList() {
+	function handleOpenList(e) {
+		// setOpenList(true);
 		setOpenList(!openList);
 	}
 
+	console.log(openList);
+
 	function handleCloseList() {
 		setSearchTerms("");
-		setOpenList(false);
+		setOpenList(!openList);
 	}
 
 	return (
-		<div className={short ? "short" : "single-input"}>
+		// <div className={short ? "short" : "single-input"}>
+		<div className={`${short ? styles.short : styles.singleInput}`}>
 			<label htmlFor={name}>{text}</label>
 			<input
 				type="text"
 				id={name}
 				placeholder={text}
-				onClick={() => handleOpenList()}
+				onClick={(e) => handleOpenList(e)}
 				value={searchTerms}
 				onChange={(event) => {
 					handleSearch(event);
 				}}
 				disabled={disableInput}
 			/>
-			<span className="arrow-btn">
-				<IoIosArrowUp className={`arrow-icon ${openList ? "expand" : ""}`} />
+			<span className={styles.arrowBtn}>
+				{/* <IoIosArrowUp className={`arrow-icon ${openList ? "expand" : ""}`} /> */}
+				<IoIosArrowUp
+					className={`${styles.arrowIcon} ${openList ? styles.expand : ""}`}
+				/>
 			</span>
 
 			{openList && (
@@ -80,6 +88,7 @@ function Input({
 					listData={results}
 					onSelectListValue={handleSelectListValue}
 					onCloseList={handleCloseList}
+					handleOpenList={handleOpenList}
 				/>
 			)}
 		</div>

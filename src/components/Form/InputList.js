@@ -1,9 +1,14 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import "./InputList.css";
 import { v4 as uuidv4 } from "uuid";
 import { useGlobalContext } from "../../AppContext";
-function InputList({ listData, onSelectListValue, onCloseList }) {
+function InputList({
+	listData,
+	onSelectListValue,
+	onCloseList,
+	handleOpenList,
+}) {
 	const { filterCars } = useGlobalContext();
 
 	function handleSelectListValue(item) {
@@ -14,13 +19,23 @@ function InputList({ listData, onSelectListValue, onCloseList }) {
 	}
 
 	function handleClickOutside(e) {
-		if (!e.target.closest(".list")) onCloseList();
+		if (!e.target.closest(".list")) return onCloseList();
 	}
+
+	// const handleClickOutside = useCallback(
+	// 	function handleClickOutside(e) {
+	// 		if (
+	// 			!e.target.closest(".list") &&
+	// 			!e.target.tagName.toLowerCase() === "input"
+	// 		)
+	// 			onCloseList();
+	// 	},
+	// 	[onCloseList]
+	// );
 
 	//nasłuchiwanie na kliknięcie nie w ten element co trzeba czyli poza wybraną listą
 	useEffect(() => {
 		document.addEventListener("mousedown", handleClickOutside);
-
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 		};

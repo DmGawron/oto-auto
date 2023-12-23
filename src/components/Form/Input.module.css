@@ -1,4 +1,4 @@
-.single-input {
+.singleInput {
 	/* display: flex; */
 	padding: 0.75rem;
 	/* border: 1px solid red; */
@@ -32,7 +32,7 @@ input::placeholder {
 	color: rgb(101, 101, 101);
 }
 
-.arrow-btn {
+.arrowBtn {
 	position: absolute;
 	right: 1.75rem;
 	top: 50%;
@@ -41,17 +41,17 @@ input::placeholder {
 	pointer-events: none;
 }
 
-.arrow-icon {
+.arrowIcon {
 	font-size: 1.3rem;
 	transition: transform 0.3s ease-out;
 }
 
-.arrow-icon.expand {
+.arrowIcon.expand {
 	transform: rotate(180deg);
 }
 
 @media screen and (min-width: 768px) {
-	.single-input {
+	.singleInput {
 		grid-column-end: span 2;
 	}
 }
