@@ -26,15 +26,19 @@ export const AppProvider = ({ children }) => {
 		mileageFrom: "",
 		mileageTo: "",
 	});
-	const [newCar, setNewCar] = useState({
-		carBody: "",
-		brand: "",
-		model: "",
-		fuel: "",
-		price: "",
-		year: "",
-		mileage: "",
-	});
+	// const [newCar, setNewCar] = useState({
+	// 	carBody: "",
+	// 	brand: "",
+	// 	model: "",
+	// 	fuel: "",
+	// 	price: "",
+	// 	year: "",
+	// 	mileage: "",
+	// 	capacity: "",
+	// 	city: "",
+	// 	power: "",
+	// 	image: "",
+	// });
 
 	const [carsData, setCarsData] = useState([]);
 	const [filteredCarsData, setFilteredCarsData] = useState([]);
@@ -138,21 +142,9 @@ export const AppProvider = ({ children }) => {
 			};
 		});
 	}
-	//update obiektu tworzonego ogloszenia
-	function handleSelectListItemToNewOffer(name, event) {
-		setNewCar((prevData) => {
-			return {
-				...prevData,
-				[name]: event,
-			};
-		});
-	}
 
 	const selectedCarModels = allCarsData.find(
 		(car) => car?.brand === selectedCarData?.brand
-	);
-	const selectedCarModelsToNewOffer = allCarsData.find(
-		(car) => car?.brand === newCar?.brand
 	);
 
 	const dataCtx = {
@@ -169,8 +161,8 @@ export const AppProvider = ({ children }) => {
 		carsData,
 		isLoading,
 		selectedCarModels,
-		selectedCarModelsToNewOffer,
-		handleSelectListItemToNewOffer,
+		// selectedCarModelsToNewOffer,
+		// handleSelectListItemToNewOffer,
 	};
 
 	return <AppContext.Provider value={dataCtx}>{children}</AppContext.Provider>;

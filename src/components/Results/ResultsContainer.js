@@ -5,6 +5,7 @@ import "./ResultsContainer.css";
 import SortResults from "./SortResults";
 import { v4 as uuidv4 } from "uuid";
 import Pagination from "../Pagination";
+import Spinner from "../Loading/Spinner";
 
 function ResultsContainer() {
 	const { filteredCarsData, isLoading } = useGlobalContext();
@@ -24,7 +25,7 @@ function ResultsContainer() {
 	}
 
 	if (isLoading) {
-		return <p>Loading...</p>;
+		return <Spinner />;
 	}
 
 	return (

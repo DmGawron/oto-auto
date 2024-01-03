@@ -19,7 +19,7 @@ article h2 {
 	margin-bottom: 2rem;
 }
 
-article button {
+.openList {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -82,4 +82,31 @@ article ul li:hover {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 8px;
+}
+
+h4 {
+	font-size: 24px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.submit {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1rem;
+}
+
+.submitBtn {
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	font-size: 20px;
+	border: none;
+	outline: none;
+	background-color: #0071ce;
+	color: white;
+	transition: all 0.2s ease-out;
+}
+
+.submitBtn:hover {
+	background-color: #065ba1;
 }
