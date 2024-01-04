@@ -13,6 +13,10 @@ app.get("/cars", (req, res) => {
 });
 app.listen(3000);
 
+app.post("/cars", (req, res) => {
+	const newObj = req.body;
+});
+
 // app.post("/favorite", async (req, res) => {
 // 	const favoriteData = req.body.favorite;
 

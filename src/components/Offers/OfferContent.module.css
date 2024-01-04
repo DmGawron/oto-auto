@@ -57,9 +57,9 @@ svg {
 .offerDetails img {
 	/* max-height: 450px; */
 	/* max-width: 700px; */
-	max-width: 700px;
-	height: 80%;
-	height: 420px;
+	width: 700px;
+	/* height: 80%; */
+	max-height: 520px;
 	/* height: auto; */
 	/* max-width: 100%; */
 

@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { createContext } from "react";
 import {
 	brandsArr,
@@ -26,20 +26,8 @@ export const AppProvider = ({ children }) => {
 		mileageFrom: "",
 		mileageTo: "",
 	});
-	// const [newCar, setNewCar] = useState({
-	// 	carBody: "",
-	// 	brand: "",
-	// 	model: "",
-	// 	fuel: "",
-	// 	price: "",
-	// 	year: "",
-	// 	mileage: "",
-	// 	capacity: "",
-	// 	city: "",
-	// 	power: "",
-	// 	image: "",
-	// });
 
+	const [sortBy, setSortBy] = useState("newest");
 	const [carsData, setCarsData] = useState([]);
 	const [filteredCarsData, setFilteredCarsData] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
@@ -147,6 +135,11 @@ export const AppProvider = ({ children }) => {
 		(car) => car?.brand === selectedCarData?.brand
 	);
 
+	//sortowanie wyników wyszukiwania
+
+	// let sortedCars = filteredCarsData;
+	// const [sortedCars, setSortedCars] = useState(filteredCarsData);
+
 	const dataCtx = {
 		brandsArr: brandsArr.sort(),
 		carsBodyType: carsBodyType.sort(),
@@ -161,6 +154,10 @@ export const AppProvider = ({ children }) => {
 		carsData,
 		isLoading,
 		selectedCarModels,
+		// sortedCars,
+		setSortBy,
+		sortBy,
+		// sorted,
 		// selectedCarModelsToNewOffer,
 		// handleSelectListItemToNewOffer,
 	};

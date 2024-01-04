@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { useGlobalContext } from "../../AppContext";
 import "./SortResults.css";
 
 function SortResults() {
-	const { filteredCarsData } = useGlobalContext();
+	const { filteredCarsData, setSortBy, sortBy } = useGlobalContext();
+	// const [sortBy, setSortBy] = useState("newest");
+
+	function handleSort(e) {
+		setSortBy(e.target.value);
+	}
 
 	return (
 		<div className="results-sort-container">
@@ -12,7 +18,7 @@ function SortResults() {
 			</div>
 			<div className="sort-container">
 				<label>Sortuj</label>
-				<select id="sort">
+				<select id="sort" value={sortBy} onChange={(e) => handleSort(e)}>
 					<option value="newest">Najnowsze</option>
 					<option value="lowestPrice">Cena: od najniższej</option>
 					<option value="highestPrice">Cena: od najwyższej</option>

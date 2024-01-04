@@ -18,6 +18,27 @@ export const CarProvider = ({ children }) => {
 		image: "",
 	});
 
+	const [isLoading, setIsLoading] = useState(false);
+
+	async function createNewOffer(newOffer) {
+		try {
+			setIsLoading(true);
+			const res = await fetch("http://localhost:3000/cars", {
+				method: "POST",
+				body: JSON.stringify(newOffer),
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+			const data = await res.json();
+			console.log("data new offer" + data);
+		} catch (err) {
+			console.log(err);
+		} finally {
+			setIsLoading(false);
+		}
+	}
+
 	//update obiektu tworzonego ogloszenia
 	function handleSelectListItemToNewOffer(name, event) {
 		setNewCar((prevData) => {
@@ -27,6 +48,8 @@ export const CarProvider = ({ children }) => {
 			};
 		});
 	}
+
+	function handleNewOffer() {}
 
 	const selectedCarModelsToNewOffer = allCarsData.find(
 		(car) => car?.brand === newCar?.brand
@@ -38,6 +61,8 @@ export const CarProvider = ({ children }) => {
 				selectedCarModelsToNewOffer,
 				handleSelectListItemToNewOffer,
 				newCar,
+				createNewOffer,
+				handleNewOffer,
 			}}
 		>
 			{children}

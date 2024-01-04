@@ -8,14 +8,28 @@ import Pagination from "../Pagination";
 import Spinner from "../Loading/Spinner";
 
 function ResultsContainer() {
-	const { filteredCarsData, isLoading } = useGlobalContext();
+	const { filteredCarsData, isLoading, sortBy } = useGlobalContext();
 
 	const [currentPage, setCurrentPage] = useState(1);
 	const itemsPerPage = 5;
 
+	let sorted;
+	if (sortBy === "lowestPrice")
+		sorted = [...filteredCarsData].sort((a, b) => a.price - b.price);
+
+	if (sortBy === "highestPrice")
+		sorted = [...filteredCarsData].sort((a, b) => b.price - a.price);
+
+	if (sortBy === "lowestPower")
+		sorted = [...filteredCarsData].sort((a, b) => a.power - b.power);
+	if (sortBy === "highestPower")
+		sorted = [...filteredCarsData].sort((a, b) => b.power - a.power);
+
+	if (sortBy === "newest") sorted = filteredCarsData;
+
 	const indexOfLastItem = currentPage * itemsPerPage;
 	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-	const currentPaginateItemsData = filteredCarsData.slice(
+	const currentPaginateItemsData = sorted.slice(
 		indexOfFirstItem,
 		indexOfLastItem
 	);

@@ -16,13 +16,17 @@ import InputNewOffer from "./InputForNewOffer/InputNewOffer";
 import { useNewCarContext } from "../../NewCarContext";
 import InfoModal from "../Modal/InfoModal";
 function NewOffer() {
-	const [selectedCarType, setSelectedCarType] = useState(carsBodyType[0]);
+	const [selectedCarType, setSelectedCarType] = useState(
+		"Wybierz rodzaj nadwozia"
+	);
 	const [openList, setOpenList] = useState(false);
 
 	const {
 		handleSelectListItemToNewOffer,
 		selectedCarModelsToNewOffer,
 		newCar,
+		createNewOffer,
+		handleNewOffer,
 	} = useNewCarContext();
 
 	function handleSelect(e) {
@@ -33,6 +37,10 @@ function NewOffer() {
 	}
 
 	console.log(newCar);
+
+	function handleClick() {
+		createNewOffer(newCar);
+	}
 
 	return (
 		<>
@@ -140,7 +148,9 @@ function NewOffer() {
 						</div>
 					</div>
 					<div className={styles.submit}>
-						<button className={styles.submitBtn}>Stwórz ogłoszenie</button>
+						<button onClick={handleClick} className={styles.submitBtn}>
+							Stwórz ogłoszenie
+						</button>
 					</div>
 				</article>
 			</section>
